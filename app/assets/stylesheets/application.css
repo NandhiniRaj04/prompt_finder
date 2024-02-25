@@ -1,0 +1,54 @@
+/* app/assets/stylesheets/application.css */
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .search-form {
+    margin-bottom: 20px;
+  }
+  
+  .search-label {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .search-input {
+    width: 300px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .search-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .matching-prompts-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .matching-prompts-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .matching-prompt {
+    margin-bottom: 10px;
+  }
+  

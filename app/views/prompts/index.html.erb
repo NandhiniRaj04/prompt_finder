@@ -1,0 +1,20 @@
+<!-- app/views/prompts/index.html.erb -->
+
+<div class="container">
+  <h1 class="title">Find Relevant Prompts</h1>
+
+  <%= form_tag(prompts_path, method: :get, class: "search-form") do %>
+    <%= label_tag(:search_term, "Enter keywords:", class: "search-label") %>
+    <%= text_field_tag(:search_term, nil, class: "search-input", placeholder: "Search prompts...") %>
+    <%= submit_tag("Search", class: "search-button") %>
+  <% end %>
+
+  <% if @prompts.present? %>
+    <h2 class="matching-prompts-title">Matching Prompts:</h2>
+    <ul class="matching-prompts-list">
+      <% @prompts.each do |prompt| %>
+        <li class="matching-prompt"><%= prompt %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
