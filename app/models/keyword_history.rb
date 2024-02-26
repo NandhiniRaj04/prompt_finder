@@ -1,0 +1,2 @@
+class KeywordHistory < ApplicationRecord
+end

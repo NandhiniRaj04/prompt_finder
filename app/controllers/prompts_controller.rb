@@ -5,6 +5,7 @@ require 'algolia'
 class PromptsController < ApplicationController
   def index
     @prompts = search_prompts(params[:search_term]) if params[:search_term].present?
+    @recent_searches = KeywordHistory.last(5).reverse
   end
 
   private
@@ -16,6 +17,8 @@ class PromptsController < ApplicationController
     results = index.search(keyword)
 
     prompts_data = results[:hits].map { |hit| hit[:prompt] }
+    
+    save_search_keyword(keyword)
 
     return prompts_data
   rescue Algolia::AlgoliaError => e
@@ -24,5 +27,11 @@ class PromptsController < ApplicationController
   rescue StandardError => e
     puts "Error: #{e.message}"
     return []
+  end
+
+  def save_search_keyword(keyword)
+    KeywordHistory.create(keyword: keyword)
+  rescue StandardError => e
+    puts "Error saving search keyword: #{e.message}"
   end
 end
