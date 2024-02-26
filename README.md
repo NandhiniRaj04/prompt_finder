@@ -46,6 +46,7 @@ Open your web browser and navigate to http://localhost:3000 to access the Prompt
 Enter keywords in the search form and click the "Search" button to find relevant prompts.
 Matching prompts will be displayed below the search form.
 Recent keyword searches will be displayed on the same page, allowing you to see what others have searched for recently.
+Seeds file is not explicitly used here, rather the algolia indexes are populated with the dataset and used.
 
 ![image](https://github.com/NandhiniRaj04/prompt_finder/assets/39384668/15f6c809-3103-4e25-b6f3-1269ce8ff798)
 
